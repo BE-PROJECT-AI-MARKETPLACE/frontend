@@ -1,0 +1,66 @@
+/* In this folder add css files for pages */
+
+/* NavBar.css */
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0);
+    /* Blue-violet color with transparency */
+    color: #fff;
+    
+    
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.links {
+    display: flex;
+    gap: 50px;
+    margin-left:  auto;
+    padding : auto;
+    align-items: center;
+    
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+    color: #a9a9a9;
+    /* Lighter shade on hover */
+}
+
+.link:visited {
+    color: #fff;
+}
+
+.signUp {
+    margin-left: auto;
+}
+
+.signUpButton {
+    background-color: (255, 255, 255, 0);
+    /* Light gray color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signUpButton:hover {
+    background-color: (255,255,255,0);
+    /* Darker shade on hover */
+}
