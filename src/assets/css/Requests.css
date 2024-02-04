@@ -1,0 +1,20 @@
+.request-container {
+    color: white;
+    /* Set text color to white */
+}
+
+.request-header {
+    color: white;
+    /* Set text color to white */
+    font-size: 24px;
+    /* Example font size */
+    margin-bottom: 20px;
+    /* Example margin */
+}
+
+.request-table {
+    color: white;
+    /* Set text color to white */
+}
+
+/* Add more styles as needed */

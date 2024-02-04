@@ -10,6 +10,7 @@ import AIMarketplace from './pages/AIMarketplace.js';
 import Footer from './components/Footer.js';
 import AddServiceForm from './pages/AddServiceForm.js';
 import FileUpload from './components/FileUpload.js';
+import Request from './pages/Requests.js';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/aimarketplace' element={<AIMarketplace />} /> 
         <Route path='/admin/addservice' element={<AddServiceForm />} />
         <Route path='/upload' element={<FileUpload />} />
+        <Route path='/viewrequests' element={<Request /> }/>
       </Routes>
       <Footer />
     </div>
