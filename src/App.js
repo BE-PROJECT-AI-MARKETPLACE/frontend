@@ -9,6 +9,7 @@ import RequestForm from './pages/RequestForm.js';
 import AIMarketplace from './pages/AIMarketplace.js';
 import Footer from './components/Footer.js';
 import AddServiceForm from './pages/AddServiceForm.js';
+import FileUpload from './components/FileUpload.js';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/requestform' element={<RequestForm />} />
         <Route path='/aimarketplace' element={<AIMarketplace />} /> 
-        <Route path='/admin/addservice' element={ <AddServiceForm />} />
+        <Route path='/admin/addservice' element={<AddServiceForm />} />
+        <Route path='/upload' element={<FileUpload />} />
       </Routes>
       <Footer />
     </div>

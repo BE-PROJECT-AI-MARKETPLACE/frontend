@@ -8,12 +8,15 @@ import axios from 'axios';
 
 
 const Signin = () => {
+
+
+    axios.defaults.withCredentials = true;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [account, setAccount] = useState('');
     const [web3, setWeb3] = useState(null);
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loginStatus, setLoginStatus] = useState("");
 
     useEffect(() => {
         const initializeWeb3 = async () => {
@@ -27,10 +30,12 @@ const Signin = () => {
             } catch (error) {
                 console.error('Error connecting to Ganache:', error);
             }
+
+            
         };
 
         initializeWeb3();
-
+       
         //cleanup
         return () => {
             if (web3 && web3.currentProvider && web3.currentProvider.close) {
@@ -77,15 +82,20 @@ const Signin = () => {
 
             const gas = 500000;
             console.log(await contract.methods.getAllUsers().call());
-            await contract.methods.login(email, password).send({ from: account, gas });
-            
-            setLoggedIn(true);
-            console.log('Signin successful! User details stored on blockchain.');
+            const res = await contract.methods.login(email, password).call({ from: account, gas });
+            console.log(res);
+            if (res === "Incorrect Credentials") {
+                toast.error("Invalid credentials");
+            }
+            else {
+                console.log('Signin successful! User details stored on blockchain.');
             toast.success("Login Successfull!!");
             
             setTimeout(() => {
-                navigate('/aimarketplace'); // Replace '/' with your home page route
+                navigate('/aimarketplace');
             }, 2000);
+            }
+            
         }
         catch (error) {
             console.error('Error signing in:', error);
@@ -136,7 +146,8 @@ const Signin = () => {
                     <button type="button" onClick={handleSignIn} className='submit'>Sign In</button>
                     <button type="button" onClick={handleSignUp} className='submit'>New User Click Here</button>
                 </div>
-            </form>     
+            </form>    
+            <h1>{loginStatus}</h1>
             <Toaster />      
         </div>
     );
