@@ -15,6 +15,7 @@ const Requests = () => {
                     const usrreq = response.data.data;
                 
                     setUserRequests(usrreq);
+
                    
                 } else {
                     console.log("Error displaying Request");
@@ -37,7 +38,7 @@ const Requests = () => {
                         <th>Phone Number</th>
                         <th>Use case</th>
                         <th>Domain</th>
-                        <th>Description</th>
+                        <th>Ddescription</th>
                     </tr>
                 </thead>
                 <tbody>
