@@ -30,7 +30,7 @@
 
 .link {
     text-decoration: none;
-    color: #fff;
+    color: #000 ;
     font-size: 1.3rem;
     transition: color 0.3s ease-in-out;
 }
@@ -41,7 +41,7 @@
 }
 
 .link:visited {
-    color: #fff;
+    color: #000;
 }
 
 .signUp {
