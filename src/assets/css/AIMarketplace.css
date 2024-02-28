@@ -1,0 +1,10 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line if there's not enough space */
+  gap: 20px; /* Adjust the gap between cards */
+}
+
+.flex-container > * {
+  flex: 1 1 300px; /* Ensure each card takes up an equal portion of the available space */
+  max-width: 300px; /* Limit the maximum width of each card */
+}

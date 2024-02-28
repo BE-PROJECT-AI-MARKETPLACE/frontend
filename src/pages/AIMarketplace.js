@@ -3,6 +3,7 @@ import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 import Card from '../components/Cards.js';
 import profile from '../assets/images/profile.png';
+import '../assets/css/AIMarketplace.css';
 import axios from 'axios';
 
 
@@ -30,10 +31,9 @@ const AIMarketplace = () => {
   },[]);
 
   return (
-      <div>
-        {/* <Button variant="secondary" href = "RequestForm.js">Secondary</Button>{' '} */}
+    <div>
       <Link to='/requestform' className='link'>Request Form</Link>      
-      
+      <div className = 'flex-container'>
 
       {services.length > 0 ? (
         services.map((item, index) => (
@@ -44,8 +44,8 @@ const AIMarketplace = () => {
       ) : (
          <p>No Services Available</p> 
       )}
-
-         
+       
+      </div>
       </div>
   )
 }

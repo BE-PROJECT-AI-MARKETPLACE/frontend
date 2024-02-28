@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import 'animate.css';
 import '../assets/css/AboutContent.css';
 import TrackVisibility from 'react-on-screen';
-import headerImg from '../assets/images/header-img.svg';
+import headerImg from '../assets/images/backimg.png';
 const AboutContent = () => {
     return (
         <section className='banner' id="home">
