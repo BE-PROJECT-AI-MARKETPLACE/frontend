@@ -18,9 +18,16 @@ const Cards = (props) => {
             </div>  
         </div>     
         <div className='btn'>
-            <Link to='/demopage' className='a'>DEMO</Link>  
+            <Link to='/demopage/' className='a'>DEMO</Link>  
         </div>   
     </div>   
   )
 }
 export default Cards;
+/*
+changes required in this file:
+1. API call should be made for demo. id refers to service_address. (api format : /demoapage/:address)
+2. if demo not possible then skip
+3. instead make button as a link for service details
+4. in smart contract write function for searching service using it's address.
+ */

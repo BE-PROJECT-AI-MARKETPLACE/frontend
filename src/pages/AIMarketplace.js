@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 // import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Card from '../components/Cards.js';
@@ -28,25 +28,30 @@ const AIMarketplace = () => {
       }
     }
     fetchServices();
-  },[]);
+  }, []);
 
   return (
     <div>
-      <Link to='/requestform' className='link'>Request Form</Link>      
-      <div className = 'flex-container'>
 
-      {services.length > 0 ? (
-        services.map((item, index) => (
+      <div className='flex-container'>
 
-          <Card key = {index+1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
+        {services.length > 0 ? (
+          services.map((item, index) => (
 
-        ))
-      ) : (
-         <p>No Services Available</p> 
-      )}
-       
+            <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
+
+          ))
+        ) : (
+          <p>No Services Available</p>
+        )}
+
       </div>
+      <div>
+        <h1 >Looking for a different AI Service?</h1>
+        <p>If you have a need for a specific AI service, we would love to know!</p>
+        <Link to='/requestform' role='button' className='link'>Request Form</Link>
       </div>
+    </div>
   )
 }
 
