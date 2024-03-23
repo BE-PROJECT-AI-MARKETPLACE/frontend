@@ -1,0 +1,41 @@
+/* .card {
+    display: flex; 
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .card-image-container {
+    margin-right: 20px;
+  }
+  
+  .card-image {
+    width: 25%; 
+  } */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust width as needed */
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card-image-container,
+  .card-text-container {
+    flex: 1;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-project-container {
+    flex-basis: 100%; /* Take full width */
+  }
+  

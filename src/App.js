@@ -11,6 +11,7 @@ import Footer from './components/Footer.js';
 import AddServiceForm from './pages/AddServiceForm.js';
 import FileUpload from './components/FileUpload.js';
 import Request from './pages/Requests.js';
+import AboutService from './pages/AboutService.js';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/admin/addservice' element={<AddServiceForm />} />
         <Route path='/upload' element={<FileUpload />} />
         <Route path='/viewrequests' element={<Request /> }/>
+        <Route path='/aboutservices' element={<AboutService /> }/>
       </Routes>
       <Footer />
     </div>
