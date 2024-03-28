@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/AboutServiceCard.css';
-
+//props
 const AboutServiceCard = ({ imageSrc, heading1, heading2, text, projectURL, organization, service, contributors }) => {
   return (
     <div className="cards">
