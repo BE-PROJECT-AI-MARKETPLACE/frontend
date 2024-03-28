@@ -13,7 +13,7 @@ const AddServiceForm = () => {
     const [serviceOverview, setServiceOverview] = useState("");
     const [serviceProvider, setServiceProvider] = useState("");
     const [projectURL, setProjectURL] = useState("");
-    const [serviceID, setServiceID] = useState("");
+    // const [serviceID, setServiceID] = useState("");
     const [contributors, setContributors] = useState("");
 
     const [file, setFile] = useState(null);
@@ -62,7 +62,7 @@ const AddServiceForm = () => {
     const resetForm = () => {
         setContributors("");
         setProjectURL("");
-        setServiceID("");
+        // setServiceID("");
         setServiceName("");
         setServiceOverview("");
         setServiceProvider("");
@@ -122,7 +122,7 @@ const AddServiceForm = () => {
                 serviceProvider,
                 ipfsHash,
                 projectURL,
-                serviceID,
+                // serviceID,
                 contributors)
                 .send({ from: account,gas});
             console.log(await contract.methods.getAllServices().call());
@@ -186,7 +186,7 @@ const AddServiceForm = () => {
                             className='input'
                         />
                     </div>
-                    <div className="input">
+                    {/* <div className="input">
                         <input
                             type="text"
                             id="ServiceID"
@@ -196,7 +196,7 @@ const AddServiceForm = () => {
                             required
                             className='input'
                         />
-                    </div>
+                    </div> */}
                     <div className="input">
                         <input
                             type="text"

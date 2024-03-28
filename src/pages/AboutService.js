@@ -2,14 +2,22 @@ import React, { useEffect, useState } from 'react';
 import AboutServiceCard from '../components/AboutServiceCard.js';
 import Backimg from '../assets/images/backimg.png';
 import axios from 'axios';
-const AboutService =()=> {
-
-  const [service, setService] = useState([]);
+import { useParams } from 'react-router-dom';
+const AboutService = (props) => {
+  const { id } = useParams();
+  
+  const [service, setService] = useState({
+    service_name :'',
+    service_overview: '',
+    service_details: '',
+  });
   useEffect(() =>{
     const fetchService = async () =>{
-      try{
-        const response = await axios.get('api call');
-        if(response.status === 200)
+      try {
+        console.log("zyz",id);
+        const response = await axios.get(`http://localhost:4000/getIndividualService/${id}`);
+        console.log(response);
+        if (response.status === 200)
         {
           const service = response.data.data;
           console.log(service)
@@ -28,6 +36,7 @@ const AboutService =()=> {
   }, []);
 
   return (
+    <div>
     <AboutServiceCard
       imageSrc={Backimg}
       heading1={service.service_name}
@@ -35,9 +44,9 @@ const AboutService =()=> {
       text={service.service_overview}
       projectURL={service.service_details.projectURL}
       organization={service.service_provider}
-      service={service.service_details.serviceID}
       contributors={service.service_details.service_contributors}
-    />
+      />
+    </div>
   );
 }
 

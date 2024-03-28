@@ -1,7 +1,9 @@
 // this is a card component for displaying all ai services
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import '../assets/css/Card.css';
+import AboutServiceCard from './AboutServiceCard';
+import AboutService from '../pages/AboutService';
 
 const Cards = (props) => {
   return (
@@ -18,7 +20,8 @@ const Cards = (props) => {
             </div>  
         </div>     
         <div className='btn'>
-            <Link to='/demopage/' className='a'>DEMO</Link>  
+
+              <Link to={`/aboutservice/${props.id}`} role='button' className='link'> View</Link>
         </div>   
     </div>   
   )

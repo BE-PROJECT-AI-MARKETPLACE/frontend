@@ -32,7 +32,7 @@ function App() {
         <Route path='/admin/addservice' element={<AddServiceForm />} />
         <Route path='/upload' element={<FileUpload />} />
         <Route path='/viewrequests' element={<Request /> }/>
-        <Route path='/aboutservices' element={<AboutService /> }/>
+        <Route path='/aboutservice/:id' element={<AboutService /> }/>
         <Route path='/userdashboard' element={<UserDashboard /> }/>
       </Routes>
       <Footer />

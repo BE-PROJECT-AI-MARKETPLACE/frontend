@@ -38,7 +38,7 @@ const AIMarketplace = () => {
         {services.length > 0 ? (
           services.map((item, index) => (
 
-            <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
+            <Card key={index + 1} id={ item.service_details.serviceID} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (
