@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import Card from '../components/Cards.js';
+import Card from '../components/ServiceCards.js';
 import profile from '../assets/images/profile.png';
 import '../assets/css/AIMarketplace.css';
 import axios from 'axios';

@@ -12,6 +12,7 @@ import AddServiceForm from './pages/AddServiceForm.js';
 import FileUpload from './components/FileUpload.js';
 import Request from './pages/Requests.js';
 import AboutService from './pages/AboutService.js';
+import UserDashboard from './pages/UserDashboard.js';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/upload' element={<FileUpload />} />
         <Route path='/viewrequests' element={<Request /> }/>
         <Route path='/aboutservices' element={<AboutService /> }/>
+        <Route path='/userdashboard' element={<UserDashboard /> }/>
       </Routes>
       <Footer />
     </div>
