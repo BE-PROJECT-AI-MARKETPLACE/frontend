@@ -51,7 +51,7 @@ function App() {
         <Route path='/viewrequests' element={<Request /> }/>
         <Route path='/aboutservice/:id' element={<AboutService /> }/>
         <Route path='/userdashboard' element={<UserDashboard /> }/>
-        <Route path='/requestedservices' element={<RequestedServices /> }/>
+       
       </Routes>
             <Footer />
           </div>
