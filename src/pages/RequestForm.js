@@ -181,7 +181,7 @@ const RequestForm = () => {
                             id="Service Title"
                             placeholder="Service Title"
                             value={serviceTitle}
-                            onChange={(e) => serviceTitle(e.target.value)}
+                            onChange={(e) => setServiceTitle(e.target.value)}
                             required
                             className='input'
                         />
