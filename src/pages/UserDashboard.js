@@ -48,9 +48,9 @@ const UserDashboard =()=> {
     <div className="services-section">
       <h2>Services Bought</h2>
       <p>Total: {user.servicesBought.length}</p>
-        {user.servicesBought.map((service, index) => (
+        {/* {user.servicesBought.map((service, index) => (
           <li key={index}>{service.name}</li>
-        ))}
+        ))} */}
 
 {user.servicesBought.length > 0 ? (
           user.servicesBought.map((item, index) => (
@@ -59,21 +59,21 @@ const UserDashboard =()=> {
 
           ))
         ) : (
-          <p>No Services Available</p>
+          <p>No Services Bought</p>
         )}
 
     </div>
     <div className="services-section">
       <h2>Services Provided</h2>
       <p>Total: {user.servicesProvided.length}</p>
-      {user.servicesBought.length > 0 ? (
-          user.servicesBought.map((item, index) => (
+      {user.servicesProvided.length > 0 ? (
+          user.servicesProvided.map((item, index) => (
 
             <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (
-          <p>No Services Available</p>
+          <p>No Services Provided</p>
         )}
     </div>
   </div>
