@@ -1,12 +1,18 @@
 import React, { useState,useEffect } from 'react';
 import '../assets/css/Signup.css';
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link ,useNavigate,useLocation} from 'react-router-dom';
 import ipfsHttpClient from 'ipfs-http-client';
 import Web3 from 'web3';
 import axios from 'axios';
 
 
 const AddServiceForm = () => {
+    let location = useLocation();
+    // console.log(props.state)
+   const { serviceTitle } = location.state;
+    console.log(serviceTitle);
+    // const serviceTitle = state ? state.serviceTitle : null;
+
 
     const navigate = useNavigate();
     const [serviceName, setServiceName] = useState("");
@@ -147,8 +153,10 @@ const AddServiceForm = () => {
                             type="text"
                             id="ServiceName"
                             placeholder="Service Name"
-                            value={serviceName}
-                            onChange={(e) => setServiceName(e.target.value)}
+                            value={serviceTitle? serviceTitle : serviceName}
+                            onChange={(e) => {
+                                setServiceName(e.target.value)
+                            }}
                             required
                             className='input'
                         />

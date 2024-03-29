@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../assets/css/Requests.css';
 
 const Requests = () => {
-
     const [userRequests, setUserRequests] = useState([]);
 
     useEffect(() => {
@@ -13,10 +13,7 @@ const Requests = () => {
                 const response = await axios.get('http://localhost:4000/getRequests');
                 if (response.status === 200) {
                     const usrreq = response.data.data;
-                
                     setUserRequests(usrreq);
-
-                   
                 } else {
                     console.log("Error displaying Request");
                 }
@@ -28,16 +25,16 @@ const Requests = () => {
     }, []);
 
     return (
-        <div className="request-container"> {/* Apply CSS class to the container */}
-            <h1 className="request-header">Request Page</h1> {/* Apply CSS class to the header */}
-            <Table striped bordered hover className="request-table"> {/* Apply CSS class to the table */}
+        <div className="request-container">
+            <h1 className="request-header">Request Page</h1>
+            <Table striped bordered hover className="request-table">
                 <thead>
                     <tr>
-                        <th>Title:</th>
-                        <th>Domain:</th>
-                        <th>Description:</th>
-                        <th>Status:</th>
-                   
+                        <th>Title</th>
+                        <th>Domain</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Click to Add Service</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,7 +45,14 @@ const Requests = () => {
                                 <td>{item.domain}</td>
                                 <td>{item.description}</td>
                                 <td>{item.isCompleted}</td>
-        
+                                <td>
+                                    <Link
+                                        to= '/admin/addservice'
+                                            state= {{ serviceTitle: item.serviceTitle }} // Pass dynamic service title here
+                                    >
+                                        Add Service
+                                    </Link>
+                                </td>
                             </tr>
                         ))
                     ) : (
@@ -58,6 +62,11 @@ const Requests = () => {
                     )}
                 </tbody>
             </Table>
+            <div>
+                <Button href="/admin/addservice" variant="primary" size="lg" >
+                    Add A Different Service
+                </Button>
+            </div>
         </div>
     );
 }
