@@ -33,24 +33,22 @@ const Requests = () => {
             <Table striped bordered hover className="request-table"> {/* Apply CSS class to the table */}
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Use case</th>
-                        <th>Domain</th>
-                        <th>Ddescription</th>
+                        <th>Title:</th>
+                        <th>Domain:</th>
+                        <th>Description:</th>
+                        <th>Status:</th>
+                   
                     </tr>
                 </thead>
                 <tbody>
                     {userRequests.length > 0 ? (
                         userRequests.map((item, index) => (
                             <tr key={index}>
-                                <td>{item.name}</td>
-                                <td>{item.email}</td>
-                                <td>{item.phoneNumber}</td>
-                                <td>{item.useCase}</td>
+                                <td>{item.serviceTitle}</td>
                                 <td>{item.domain}</td>
                                 <td>{item.description}</td>
+                                <td>{item.isCompleted}</td>
+        
                             </tr>
                         ))
                     ) : (

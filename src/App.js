@@ -14,12 +14,28 @@ import Request from './pages/Requests.js';
 import AboutService from './pages/AboutService.js';
 import UserDashboard from './pages/UserDashboard.js';
 import RequestedServices from './pages/RequestedServices.js';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     
     <div className="App">
       {/* <div className="bg-pattern-top"></div> */}
+      {loading ? (
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+      ) :
+        (
+          <div>
+
       <NavBar />
       <Routes>
         <Route path='/' element={<Home /> } />
@@ -37,7 +53,9 @@ function App() {
         <Route path='/userdashboard' element={<UserDashboard /> }/>
         <Route path='/requestedservices' element={<RequestedServices /> }/>
       </Routes>
-      <Footer />
+            <Footer />
+          </div>
+        )}
     </div>
   );
 }
