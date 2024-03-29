@@ -13,6 +13,7 @@ import FileUpload from './components/FileUpload.js';
 import Request from './pages/Requests.js';
 import AboutService from './pages/AboutService.js';
 import UserDashboard from './pages/UserDashboard.js';
+import RequestedServices from './pages/RequestedServices.js';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='/viewrequests' element={<Request /> }/>
         <Route path='/aboutservice/:id' element={<AboutService /> }/>
         <Route path='/userdashboard' element={<UserDashboard /> }/>
+        <Route path='/requestedservices' element={<RequestedServices /> }/>
       </Routes>
       <Footer />
     </div>

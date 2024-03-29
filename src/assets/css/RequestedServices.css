@@ -1,0 +1,23 @@
+.service-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .service-details table {
+    width: 100%;
+  }
+  
+  .service-details td {
+    padding: 5px 10px;
+  }
+  
+  .service-details td:first-child {
+    width: 120px; /* Adjust width of the first column as needed */
+  }
+  
+  .service-details td strong {
+    font-weight: bold;
+  }
+  
