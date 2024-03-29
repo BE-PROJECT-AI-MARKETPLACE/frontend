@@ -13,7 +13,6 @@ import FileUpload from './components/FileUpload.js';
 import Request from './pages/Requests.js';
 import AboutService from './pages/AboutService.js';
 import UserDashboard from './pages/UserDashboard.js';
-import RequestedServices from './pages/RequestedServices.js';
 import { useState, useEffect } from 'react';
 
 function App() {
