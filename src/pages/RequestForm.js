@@ -10,7 +10,7 @@ const RequestForm = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [domain, setDomain] = useState('');
-    const [useCase, setUseCase] = useState('');
+    const [serviceTitle, setServiceTitle] = useState('');
     const [description, setDescription] = useState('');
     const [account, setAccount] = useState('');
     const [web3, setWeb3] = useState(null);
@@ -66,7 +66,7 @@ const RequestForm = () => {
             email: email,
             phoneNumber: phoneNumber,
             domain: domain,
-            useCase: useCase,
+            serviceTitle: serviceTitle,
             description:description,
         }
         console.log(formdata);
@@ -92,7 +92,7 @@ const RequestForm = () => {
             const gas = 500000;
 
             console.log(await contract.methods.getAllRequests().call());
-            await contract.methods.addRequest(name,email,phoneNumber,useCase,domain,description).send({ from: account, gas });
+            await contract.methods.addRequest(name,email,phoneNumber,serviceTitle,domain,description).send({ from: account, gas });
             console.log(await contract.methods.getAllRequests().call());
             const response = await axios.post("http://localhost:4000/processrequest", formdata);
             const success = response.data.success;
@@ -115,7 +115,7 @@ const RequestForm = () => {
         setName("");
         setEmail("");
         setPhoneNumber("");
-        setUseCase("");
+        serviceTitle("");
         setDomain("");
         setDescription("");
     }
@@ -178,10 +178,10 @@ const RequestForm = () => {
                     <div className='input'>
                         <input
                             type="text"
-                            id="UseCase"
-                            placeholder="Use Case"
-                            value={useCase}
-                            onChange={(e) => setUseCase(e.target.value)}
+                            id="Service Title"
+                            placeholder="Service Title"
+                            value={serviceTitle}
+                            onChange={(e) => serviceTitle(e.target.value)}
                             required
                             className='input'
                         />
