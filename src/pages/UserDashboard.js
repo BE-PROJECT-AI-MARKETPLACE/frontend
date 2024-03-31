@@ -5,23 +5,27 @@ import profile from '../assets/images/profile.png';
 import Card from '../components/ServiceCards.js';
 import '../assets/css/UserDashboard.css';
 import axios from 'axios';
+import { useAuth } from '../context/AuthContext.js';
+
+
 const UserDashboard =()=> {
 
-  const [user, setUserDetails] = useState({
+  const { user } = useAuth();
+  
+  const [userDetails, setUserDetails] = useState({
     name: '',
     email: '',
-    servicesBought: [],
-    servicesProvided: []
+    // servicesBought: [],
+    // servicesProvided: []
   });
   useEffect(() =>{
     const fetchService = async () =>{
       try{
-        const response = await axios.get('api call');
+        const response = await axios.get(`http://localhost:4000/getUserDetails/${user.account}`);
         if(response.status === 200)
         {
-          const userDetails = response.data.data;
-          console.log(userDetails)
-          setUserDetails(userDetails);
+          console.log(response.data.data);
+          setUserDetails(response.data.data);
         }
         else
         {
@@ -42,32 +46,32 @@ const UserDashboard =()=> {
     </div>
     <div className="user-details">
       <h2>User Details</h2>
-      <p><strong>Name:</strong> {user.name}</p>
-      <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Name:</strong> {userDetails.name}</p>
+        <p><strong>Email:</strong> {userDetails.email}</p>
     </div>
-    <div className="services-section">
+    {/* <div className="services-section">
       <h2>Services Bought</h2>
-      <p>Total: {user.servicesBought.length}</p>
+        <p>Total: {userDetails.servicesBought.length}</p>
         {/* {user.servicesBought.map((service, index) => (
           <li key={index}>{service.name}</li>
         ))} */}
 
-{user.servicesBought.length > 0 ? (
-          user.servicesBought.map((item, index) => (
+        {/* {userDetails.servicesBought.length > 0 ? (
+          userDetails.servicesBought.map((item, index) => (
 
             <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (
           <p>No Services Bought</p>
-        )}
+        )} */}
 
-    </div>
+    {/* </div>
     <div className="services-section">
       <h2>Services Provided</h2>
       <p>Total: {user.servicesProvided.length}</p>
-      {user.servicesProvided.length > 0 ? (
-          user.servicesProvided.map((item, index) => (
+        {userDetails.servicesProvided.length > 0 ? (
+          userDetails.servicesProvided.map((item, index) => (
 
             <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
@@ -75,7 +79,7 @@ const UserDashboard =()=> {
         ) : (
           <p>No Services Provided</p>
         )}
-    </div>
+    </div> */}
   </div>
   );
 }

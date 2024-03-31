@@ -48,13 +48,13 @@ const AIMarketplace = () => {
       </div>
       <div className="pagefooter">
         <div>
-          <h1 >Looking for a different AI Service?</h1>
-          <p>If you have a need for a specific AI service, we would love to know!</p>
+          <h1 >Seeking an alternative AI solution?</h1>
+          <h6>We're eager to learn about your specific AI needs!</h6>
           <Link to='/requestform' role='button' className='link'>Request Form</Link>
         </div>
         <div>
           <h1 >Looking for a Contribution?</h1>
-          <p>View all service requests and show your skills if possible </p>
+          <h6>View all service requests and show your skills if possible </h6>
           <Link to='/viewrequests' role='button' className='link'>View Request</Link>
         </div>
       </div>

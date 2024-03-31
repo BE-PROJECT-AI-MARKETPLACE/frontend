@@ -3,9 +3,11 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Web3 from 'web3';
+import { useAuth } from '../context/AuthContext';
 
 const RequestForm = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -22,7 +24,7 @@ const RequestForm = () => {
 
             try {
                 const accounts = await web3Instance.eth.getAccounts();
-                setAccount(accounts[0]);
+                setAccount(user.account);
             } catch (error) {
                 console.error('Error connecting to Ganache:', error);
             }

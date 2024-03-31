@@ -153,7 +153,7 @@ const AddServiceForm = () => {
                             type="text"
                             id="ServiceName"
                             placeholder="Service Name"
-                            value={serviceTitle? serviceTitle : serviceName}
+                            value={serviceTitle !== "null" ? serviceTitle : serviceName}
                             onChange={(e) => {
                                 setServiceName(e.target.value)
                             }}

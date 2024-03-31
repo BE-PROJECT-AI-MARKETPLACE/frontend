@@ -63,9 +63,9 @@ const Requests = () => {
                 </tbody>
             </Table>
             <div>
-                <Button href="/admin/addservice" variant="primary" size="lg" >
+                <Link to="/admin/addservice" state={{ serviceTitle: "null" }}>
                     Add A Different Service
-                </Button>
+                </Link>
             </div>
         </div>
     );
