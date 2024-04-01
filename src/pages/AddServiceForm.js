@@ -1,6 +1,10 @@
 import React, { useState,useEffect } from 'react';
 import '../assets/css/Signup.css';
-import { Link ,useNavigate,useLocation} from 'react-router-dom';
+import {
+    Link,
+    useNavigate,
+    useLocation
+} from 'react-router-dom';
 import ipfsHttpClient from 'ipfs-http-client';
 import Web3 from 'web3';
 import axios from 'axios';

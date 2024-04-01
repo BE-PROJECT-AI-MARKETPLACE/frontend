@@ -11,24 +11,20 @@ import {
   Route,
   Navigate
 } from 'react-router-dom';
-import {
-  NavBar,
-  Footer,
-  FileUpload,
-  ProtectedRoute
-} from './components';
-import {
-  Home,
-  Signup,
-  Signin,
-  AboutUs,
-  RequestForm,
-  AIMarketplace,
-  AddServiceForm,
-  Requests,
-  AboutService,
-  UserDashboard
-} from './pages';
+import NavBar from './components/NavBar.js';
+import Footer from './components/Footer.js';
+import FileUpload from './components/FileUpload.js';
+import ProtectedRoute from './components/ProtectedRoute.js';
+import Home from './pages/Home';
+import Signup from './pages/Signup.js';
+import Signin from './pages/Signin.js';
+import AboutUs from './pages/AboutUs.js';
+import RequestForm from './pages/RequestForm.js';
+import AIMarketplace from './pages/AIMarketplace.js';
+import AddServiceForm from './pages/AddServiceForm.js';
+import Requests from './pages/Requests.js';
+import AboutService from './pages/AboutService.js';
+import UserDashboard from './pages/UserDashboard.js';
 
 function App() {
   //const { user } = useAuth();

@@ -2,9 +2,31 @@
   display: flex;
   flex-wrap: wrap; /* Allow cards to wrap to the next line if there's not enough space */
   gap: 20px; /* Adjust the gap between cards */
+  padding: 20px;
+  justify-content: center;
 }
 
 .flex-container > * {
   flex: 1 1 300px; /* Ensure each card takes up an equal portion of the available space */
   max-width: 300px; /* Limit the maximum width of each card */
+}
+
+.flex-container h3{
+  text-align : center;
+}
+
+.pagefooter {
+  display: flex;
+  justify-content: center;
+}
+
+.pagefooter > div {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+}
+
+.link {
+  color: blue; /* Change the color to blue */
+  text-decoration: none; /* Remove the default underline */
 }

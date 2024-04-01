@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {
+  useEffect,
+  useState
+} from 'react'
 // import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Card from '../components/ServiceCards.js';
@@ -42,7 +45,7 @@ const AIMarketplace = () => {
 
           ))
         ) : (
-          <p>No Services Available</p>
+          <h3>No Services Available</h3>
         )}
 
       </div>
@@ -50,12 +53,12 @@ const AIMarketplace = () => {
         <div>
           <h1 >Seeking an alternative AI solution?</h1>
           <h6>We're eager to learn about your specific AI needs!</h6>
-          <Link to='/requestform' role='button' className='link'>Request Form</Link>
+          <Link to='/requestform' role='button' style={{ color: 'blue', textDecoration: 'none' }}>Request Form</Link>
         </div>
         <div>
           <h1 >Looking for a Contribution?</h1>
           <h6>View all service requests and show your skills if possible </h6>
-          <Link to='/viewrequests' role='button' className='link'>View Request</Link>
+          <Link to='/viewrequests' role='button' style={{ color: 'blue', textDecoration: 'none' }}>View Request</Link>
         </div>
       </div>
     </div>

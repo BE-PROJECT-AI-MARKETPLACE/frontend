@@ -1,6 +1,9 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import React, {
+    useState,
+    useEffect
+} from 'react';
+import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../assets/css/Requests.css';
 
@@ -47,8 +50,8 @@ const Requests = () => {
                                 <td>{item.isCompleted}</td>
                                 <td>
                                     <Link
-                                        to= '/admin/addservice'
-                                            state= {{ serviceTitle: item.serviceTitle }} // Pass dynamic service title here
+                                        to='/admin/addservice'
+                                        state={{ serviceTitle: item.serviceTitle }} // Pass dynamic service title here
                                     >
                                         Add Service
                                     </Link>
