@@ -1,7 +1,29 @@
 import React from 'react';
 import '../assets/css/AboutServiceCard.css';
+import { useAuth } from '../context/AuthContext';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 //props
 const AboutServiceCard = (props) => {
+
+  const { user } = useAuth();
+
+  const handlePayment = async() => {
+    try {
+      const response = await axios.post('http://localhost:4000/pay', { amount: 1, paymentID: 1, payer: user.account });
+      console.log(response);
+      if (response.data.status === 200) {
+        toast.success(response.data.message);
+
+
+      } else {
+        toast.error("Payment Unsuccessful");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
   return (
     <div className="cards">
       <div className="card">
@@ -43,7 +65,7 @@ const AboutServiceCard = (props) => {
         </div>
 
       </div>
-      
+      <button onClick={ handlePayment }>Pay</button>
     </div>
 
   );
