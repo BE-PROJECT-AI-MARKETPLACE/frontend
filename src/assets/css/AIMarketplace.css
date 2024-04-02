@@ -15,27 +15,18 @@
   text-align : center;
 }
 
-.page {
+.pagefooter {
   display: flex;
   justify-content: center;
-
 }
 
-.content-item {
+.pagefooter > div {
+  border: 1px solid black;
   padding: 20px;
-  margin: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s; 
-  background-color: white;
-} 
-
-.content-item:hover {
-  transform: scale(1.1);
+  margin: 10px;
 }
 
 .link {
-  color: blue; 
-  text-decoration: none; 
+  color: blue; /* Change the color to blue */
+  text-decoration: none; /* Remove the default underline */
 }
-

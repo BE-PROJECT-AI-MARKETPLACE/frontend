@@ -52,7 +52,6 @@ const Requests = () => {
                                     <Link
                                         to='/admin/addservice'
                                         state={{ serviceTitle: item.serviceTitle }} // Pass dynamic service title here
-                                        style={{ color: 'blue', textDecoration: 'none' }}
                                     >
                                         Add Service
                                     </Link>
@@ -67,7 +66,7 @@ const Requests = () => {
                 </tbody>
             </Table>
             <div>
-                <Link to="/admin/addservice" state={{ serviceTitle: "null" }} style={{ color: 'blue', textDecoration: 'none' }}>
+                <Link to="/admin/addservice" state={{ serviceTitle: "null" }}>
                     Add A Different Service
                 </Link>
             </div>
