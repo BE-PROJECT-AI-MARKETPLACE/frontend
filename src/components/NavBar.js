@@ -1,32 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../assets/css/NavBar.css';
 import { useAuth } from '../context/AuthContext';
 
 const NavBar = () => {
 
-    const { user, logout } = useAuth();
+    const { user } = useAuth();
 
     return (
-        <nav className='navBar'>
-            <div className='logo'>
-                <Link to='/' className='link'>Logo</Link>
-            </div>
-            <div className='links'>
-                <Link to='/aimarketplace'  className='link'>AI Marketplace</Link>
-                <Link to='/aboutus' className='link'>About Us</Link>
-            </div>
-            <div className='signUp'>
-                {user ? ( // If user is logged in
+    <div>
+    <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container"><a href="/" class="navbar-brand text-uppercase font-weight-bold">AI MarketPlace</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>            
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a href="/aboutus" class="nav-link text-uppercase font-weight-bold">About Us</a></li>
+                    <li class="nav-item"><a href="/aimarketplace" class="nav-link text-uppercase font-weight-bold">AI Models</a></li>
+                    {user ? ( // If user is logged in
                     <>
-                        <Link to='/userdashboard'>{user.email}</Link>
-                        <button onClick={logout} className='link signUpButton'>Logout</button>
+                        <li class="nav-item"><a href="/userdashboard" class="nav-link text-uppercase font-weight-bold">Logout</a></li>
                     </>
                 ) : ( // If user is not logged in
-                    <Link to='/signup' className='link signUpButton'>Sign Up</Link>
+                    <li class="nav-item"><a href="/signup" class="nav-link text-uppercase font-weight-bold">Sign Up</a></li>
                 )}
+                
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+</header>
+
+</div>
     )  
 }
 
