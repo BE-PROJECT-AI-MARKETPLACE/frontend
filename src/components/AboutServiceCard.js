@@ -7,15 +7,16 @@ import toast,{Toaster} from 'react-hot-toast';
 const AboutServiceCard = (props) => {
 
   const { user } = useAuth();
+  const { heading1} = props;
 
   const handlePayment = async() => {
     try {
-      const response = await axios.post('http://localhost:4000/pay', { amount: 1, paymentID: 1, payer: user.account });
+      console.log(props);
+      console.log(heading1);
+      const response = await axios.post('http://localhost:4000/pay', { amount: 1, service_name : heading1, payer: user.account });
       console.log(response);
       if (response.data.status === 200) {
         toast.success(response.data.message);
-
-
       } else {
         toast.error("Payment Unsuccessful");
       }
