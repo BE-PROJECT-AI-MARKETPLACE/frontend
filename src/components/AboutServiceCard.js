@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/css/AboutServiceCard.css';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import toast,{Toaster} from 'react-hot-toast';
 //props
 const AboutServiceCard = (props) => {
 
@@ -65,7 +65,8 @@ const AboutServiceCard = (props) => {
         </div>
 
       </div>
-      <button onClick={ handlePayment }>Pay</button>
+      <button onClick={handlePayment}>Pay</button>
+      <Toaster />
     </div>
 
   );
