@@ -29,7 +29,7 @@ const Requests = () => {
 
     return (
         <div className="request-container">
-            <h1 className="request-header">Request Page</h1>
+            <h1 className="request-header">Requested Services</h1>
             <Table striped bordered hover className="request-table">
                 <thead>
                     <tr>
@@ -65,8 +65,8 @@ const Requests = () => {
                     )}
                 </tbody>
             </Table>
-            <div>
-                <Link to="/admin/addservice" state={{ serviceTitle: "null" }}>
+            <div className="link-box">
+                <Link to="/admin/addservice" state={{ serviceTitle: "null" }} style={{textDecoration: "none"}}>
                     Add A Different Service
                 </Link>
             </div>
