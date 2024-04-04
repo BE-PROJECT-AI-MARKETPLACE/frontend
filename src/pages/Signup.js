@@ -31,7 +31,7 @@ const Signup = () => {
 
             try {
                 const accounts = await web3Instance.eth.getAccounts();
-                setAccount(accounts[2]);
+                setAccount(accounts[1]);
             } catch (error) {
                 console.error('Error connecting to Ganache:', error);
             }

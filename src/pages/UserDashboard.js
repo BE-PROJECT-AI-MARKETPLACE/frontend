@@ -45,9 +45,10 @@ const UserDashboard =()=> {
     </div>
     <div className="user-details">
       <h2>User Details</h2>
-        <p><strong>Name:</strong> {userDetails.name}</p>
-        <p><strong>Email:</strong> {userDetails.email}</p>
+        <h5><strong>Name:</strong> {userDetails.name}</h5>
+        <h5><strong>Email:</strong> {userDetails.email}</h5>
     </div>
+    <div className="services-sections-container">
     <div className="services-section">
       <h2>Services Bought</h2>
         <p>Total: {servicesBought.length}</p>
@@ -63,6 +64,7 @@ const UserDashboard =()=> {
         )}
 
     </div>
+    
     <div className="services-section">
       <h2>Services Provided</h2>
       <p>Total: {servicesProvided.length}</p>
@@ -75,6 +77,7 @@ const UserDashboard =()=> {
         ) : (
           <p>No Services Provided</p>
         )}
+    </div>
     </div>
   </div>
   );
