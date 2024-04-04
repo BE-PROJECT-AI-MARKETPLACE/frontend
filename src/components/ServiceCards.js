@@ -1,15 +1,15 @@
 // this is a card component for displaying all ai services
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../assets/css/Card.css';
 
 const Cards = (props) => {
-    const handleService = () =>
-    {
-        <Link to={`/aboutservice/${props.id}`} role='button' className='link'> View</Link>
+    const navigate = useNavigate();
+    const handleService = () => {
+        navigate(`/aboutservice/${props.id}`);
     }
   return (
-    <div className='card-container'>
+    <div className='card-container' onClick={handleService}>
         <div className='image-container'>
             <img src={props.imageurl} alt=''/>
         </div>
