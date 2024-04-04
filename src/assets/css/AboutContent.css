@@ -1,82 +1,9 @@
-/************ Banner Css ************/
-
-
-.banner {
-    margin-top: 70px;
-    padding: 50px 0 120px 0;
-    
+.text-small {
+    font-size: 0.9rem !important;
 }
 
-
-
-.banner h1 {
-    font-size: 65px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1.3;
-    margin-bottom: 20px;
-    display: block;
-    color : black;
-
-
-}
-
-.banner p {
-    color: grey;
-    font-size: 22px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    width: 100%;
-}
-
-.banner img {
-    height:25rem;
-    /* animation: updown 5s linear infinite; */
-}
-
-/* @keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-
-    50% {
-        transform: translateY(20px);
-    }
-
-    100% {
-        transform: translateY(-20px);
-    }
-} */
-
-.homePage {
-    text-align: center; /* Center-align the text */
-    margin: 50px auto; /* Set top and bottom margin to 50px and horizontally center the div */
-    max-width: 800px; /* Set maximum width to prevent text from stretching too wide */
-}
-
-.homePage h1 {
-    margin-bottom: 20px; /* Add margin below the h1 heading */
-    font-size: 36px; /* Increase font size */
-    color: #333; /* Set text color */
-}
-
-.homePage h3 {
-    margin-bottom: 20px; /* Add margin below the h3 heading */
-    font-size: 18px; /* Increase font size */
-    color: #666; /* Set text color */
-}
-
-.homePage::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #ccc; /* Add a horizontal line */
-    margin: 20px 0; /* Add margin */
-}
-
-.homePage::after {
-    content: '';
-    display: block;
-    clear: both;
+body {
+    max-height: 50vh;
+    background-color: #4ca1af;
+    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%);
 }
