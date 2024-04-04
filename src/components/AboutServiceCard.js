@@ -52,23 +52,25 @@ const AboutServiceCard = (props) => {
       </div>
 
       <div className="card">
-        <div className="main-card-project-container">
-          <div className="main-card-project-content">
-            <h4 className="main-card-project-heading">Project Details</h4>
-            <div className="main-card-project-field">
-              <p className="main-card-text">Project URL {props.projectURL}</p>
-              {/* <p className="main-card-text">{props.projectURL}</p> */}
-            </div>
-            <div className="main-card-project-field">
-              <p className="main-card-text"> Organization ID: {props.organization}</p>
-              {/* <p className="main-card-text">{props.organization}</p> */}
-            </div>
-            <div className="main-card-project-field">
-              <p className="main-card-text">Contributors: {props.contributors}</p>
-            </div>
-          </div>
-        </div>
+        <div className="main-card-text-content">
+          <h4 className="main-card-project-heading2">Service Details</h4>
       </div>
+      <table className="inner-table"> 
+        <tr>
+          <td className="main-card-project-field">Service URL:</td>
+          <td className="main-card-text">{props.projectURL}</td>
+        </tr>
+        <tr>
+          <td className="main-card-project-field">Organization ID:</td>
+          <td className="main-card-text">{props.organization}</td>
+        </tr>
+        <tr>
+          <td className="main-card-project-field">Contributors:</td>
+          <td className="main-card-text">{props.contributors}</td>
+        </tr>
+    </table>
+      </div>
+      
     </div>
     <div className="cards">
       <button class="button-17" onClick={handlePayment}>Buy Service</button>

@@ -9,7 +9,7 @@ const Cards = (props) => {
         <Link to={`/aboutservice/${props.id}`} role='button' className='link'> View</Link>
     }
   return (
-    <div className='card-container' onClick={handleService}>
+    <div className='card-container'>
         <div className='image-container'>
             <img src={props.imageurl} alt=''/>
         </div>
@@ -21,6 +21,7 @@ const Cards = (props) => {
                 <p>{props.body}</p>
             </div>  
         </div>     
+
     </div>   
   )
 }

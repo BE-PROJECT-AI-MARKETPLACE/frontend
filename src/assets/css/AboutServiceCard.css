@@ -5,9 +5,33 @@
   margin-left: 20px;
  } 
   .card {
-    flex: 0 0 calc(33.33% - 60px); /* Adjust width as needed */
-
+    flex: 0 0 calc(33.33% - 60px); 
+    align-content: left;
   }
+  
+  .inner-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders between table cells */
+  }
+  
+  .main-card-project-field, .main-card-text {
+    border: 1px solid #ddd; /* Add border to table cells */
+    padding: 8px; /* Add padding to table cells */
+  }
+  
+  .main-card-project-field {
+    background-color: #f2f2f2; /* Add background color to field cells */
+    font-weight: bold; /* Make field cells bold */
+  }
+  
+  .main-card-project-field:first-child {
+    border-top-left-radius: 5px; /* Rounded corners for the first field cell */
+  }
+  
+  .main-card-project-text:last-child {
+    border-bottom-right-radius: 5px; /* Rounded corners for the last text cell */
+  }
+  
   
   .main-card-image-container,
   .main-card-text-container {
