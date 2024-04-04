@@ -52,10 +52,10 @@ const AboutServiceCard = (props) => {
       </div>
 
       <div className="card">
-        <div className="main-card-text-content">
-          <h4 className="main-card-project-heading2">Service Details</h4>
-      </div>
-      <table className="inner-table"> 
+  <div className="main-card-text-content">
+    <h4 className="main-card-project-heading2">Service Details</h4>
+    <table className="inner-table">
+      <tbody>
         <tr>
           <td className="main-card-project-field">Service URL:</td>
           <td className="main-card-text">{props.projectURL}</td>
@@ -68,9 +68,12 @@ const AboutServiceCard = (props) => {
           <td className="main-card-project-field">Contributors:</td>
           <td className="main-card-text">{props.contributors}</td>
         </tr>
+      </tbody>
     </table>
-      </div>
-      
+  </div>
+</div>
+
+
     </div>
     <div className="cards">
       <button class="button-17" onClick={handlePayment}>Buy Service</button>

@@ -8,7 +8,7 @@
     flex: 0 0 calc(33.33% - 60px); 
     align-content: left;
   }
-  
+
   .inner-table {
     width: 100%;
     border-collapse: collapse; /* Collapse borders between table cells */
