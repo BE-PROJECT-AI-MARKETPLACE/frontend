@@ -1,6 +1,6 @@
 import React from 'react';
 import 'animate.css';
-import '../assets/css/AboutContent.css';
+import '../assets/css/Home.css';
 const Home = () => {
     return (
     <div class="container">
