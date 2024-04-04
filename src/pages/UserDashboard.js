@@ -44,7 +44,6 @@ const UserDashboard =()=> {
       <h1>User Dashboard</h1>
     </div>
     <div className="user-details">
-      <h2>User Details</h2>
         <h5><strong>Name:</strong> {userDetails.name}</h5>
         <h5><strong>Email:</strong> {userDetails.email}</h5>
     </div>

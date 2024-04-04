@@ -32,6 +32,8 @@
 
 .services-section h2 {
   margin-top: 0;
+  background-color: #d9d9d6; /* Set background color */
+  padding: 10px; /* Add some padding for better visual */
 }
 
 .services-section p {
