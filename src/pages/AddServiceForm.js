@@ -221,7 +221,7 @@ const AddServiceForm = () => {
                         />
                     </div>
                     <div className="input">
-                        <input type="file" onChange={handleFileUpload} accept=".ipynb" />
+                        <input type="file" onChange={handleFileUpload} accept=".pdf" />
                         <button type="button" className='submit' onClick={handleUpload}>Upload to IPFS</button>
                         
                     </div>

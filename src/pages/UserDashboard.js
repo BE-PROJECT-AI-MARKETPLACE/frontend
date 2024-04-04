@@ -12,12 +12,9 @@ const UserDashboard =()=> {
 
   const { user } = useAuth();
   
-  const [userDetails, setUserDetails] = useState({
-    name: '',
-    email: '',
-    // servicesBought: [],
-    // servicesProvided: []
-  });
+  const [userDetails, setUserDetails] = useState({});
+  const [servicesBought, setServicesBought] = useState([]);
+  const [servicesProvided, setServicesProvided] = useState([]);
   useEffect(() =>{
     const fetchService = async () =>{
       try{
@@ -25,7 +22,9 @@ const UserDashboard =()=> {
         if(response.status === 200)
         {
           console.log(response.data.data);
-          setUserDetails(response.data.data);
+          setUserDetails(response.data.data.User);
+          setServicesBought(response.data.data.userServicesBought);
+          setServicesProvided(response.data.data.ownerServices);
         }
         else
         {
@@ -49,29 +48,26 @@ const UserDashboard =()=> {
         <p><strong>Name:</strong> {userDetails.name}</p>
         <p><strong>Email:</strong> {userDetails.email}</p>
     </div>
-    {/* <div className="services-section">
+    <div className="services-section">
       <h2>Services Bought</h2>
-        <p>Total: {userDetails.servicesBought.length}</p>
-        {/* {user.servicesBought.map((service, index) => (
-          <li key={index}>{service.name}</li>
-        ))} */}
+        <p>Total: {servicesBought.length}</p>
 
-        {/* {userDetails.servicesBought.length > 0 ? (
-          userDetails.servicesBought.map((item, index) => (
+        {servicesBought.length > 0 ? (
+          servicesBought.map((item, index) => (
 
             <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (
           <p>No Services Bought</p>
-        )} */}
+        )}
 
-    {/* </div>
+    </div>
     <div className="services-section">
       <h2>Services Provided</h2>
-      <p>Total: {user.servicesProvided.length}</p>
-        {userDetails.servicesProvided.length > 0 ? (
-          userDetails.servicesProvided.map((item, index) => (
+      <p>Total: {servicesProvided.length}</p>
+        {servicesProvided.length > 0 ? (
+          servicesProvided.map((item, index) => (
 
             <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
@@ -79,7 +75,7 @@ const UserDashboard =()=> {
         ) : (
           <p>No Services Provided</p>
         )}
-    </div> */}
+    </div>
   </div>
   );
 }

@@ -1,66 +1,67 @@
-/* In this folder add css files for pages */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* NavBar.css */
-.navBar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0;
-    background: grey;
-    /* Blue-violet color with transparency */
-    color: #ff0000;
-    
-    
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fcfcfc;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #000000;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
-.links {
-    display: flex;
-    gap: 50px;
-    margin-left:  auto;
-    padding : auto;
-    align-items: center;
-    
+.navbar {
+  height: 60px;
+  background-color: white; /* Changed navbar background color to white */
+  position: relative;
 }
 
-.link {
-    text-decoration: none;
-    color: #000 ;
-    font-size: 1.3rem;
-    transition: color 0.3s ease-in-out;
+.logo a{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+  font-weight: 400;
 }
 
-.link:hover {
-    color: #a9a9a9;
-    /* Lighter shade on hover */
+.nav-elements {
 }
 
-.link:visited {
-    color: #000;
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
 }
 
-.signUp {
-    margin-left: auto;
+.nav-elements ul li:not(:last-child) {
+  margin-right: 60px;
 }
 
-.signUpButton {
-    background-color: (255, 255, 255, 0);
-    /* Light gray color */
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+.nav-elements ul a {
+  font-size: 20px;
+  font-weight: 400;
+  color: black !important; /* Changed link color to black */
+  text-decoration: none;
 }
 
-.signUpButton:hover {
-    background-color: (255,255,255,0);
-    /* Darker shade on hover */
+.nav-elements ul a.active {
+  color: #574c4c;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-elements ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #574c4c;
 }

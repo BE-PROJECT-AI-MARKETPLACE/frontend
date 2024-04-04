@@ -1,21 +1,26 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../assets/css/AboutServiceCard.css';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import toast,{Toaster} from 'react-hot-toast';
 //props
 const AboutServiceCard = (props) => {
 
   const { user } = useAuth();
-
+  const { heading1 } = props;
   const handlePayment = async() => {
     try {
-      const response = await axios.post('http://localhost:4000/pay', { amount: 1, paymentID: 1, payer: user.account });
+      console.log(props);
+      console.log(heading1);
+      const response = await axios.post('http://localhost:4000/pay', { amount: 1, service_name : heading1, payer: user.account });
       console.log(response);
       if (response.data.status === 200) {
+        console.log(response.data.data);
+        const hash = response.data.data;
         toast.success(response.data.message);
-
-
+        const openLink = `http://127.0.0.1:8081/ipfs/${hash}`;
+        console.log(openLink);
+        window.open(openLink);
       } else {
         toast.error("Payment Unsuccessful");
       }
@@ -65,7 +70,8 @@ const AboutServiceCard = (props) => {
         </div>
 
       </div>
-      <button onClick={ handlePayment }>Pay</button>
+      <button onClick={handlePayment}>Pay</button>
+      <Toaster />
     </div>
 
   );
