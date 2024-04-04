@@ -3,7 +3,7 @@ import React, {
   useState
 } from 'react'
 // import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '../components/ServiceCards.js';
 import profile from '../assets/images/profile.png';
 import '../assets/css/AIMarketplace.css';
@@ -13,6 +13,7 @@ import axios from 'axios';
 
 const AIMarketplace = () => {
   const [services, setServices] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchServices = async () => {
       try {
@@ -33,6 +34,13 @@ const AIMarketplace = () => {
     fetchServices();
   }, []);
 
+  const handleRequest = ()=>{
+    navigate('/requestform')
+  }
+
+  const handleViewRequest = () => {
+    navigate('/viewrequests')
+  }
   return (
     <div>
 
@@ -49,16 +57,17 @@ const AIMarketplace = () => {
         )}
 
       </div>
-      <div className="pagefooter">
-        <div>
-          <h1 >Seeking an alternative AI solution?</h1>
-          <h6>We're eager to learn about your specific AI needs!</h6>
-          <Link to='/requestform' role='button' style={{ color: 'blue', textDecoration: 'none' }}>Request Form</Link>
+
+      <div className='cards'>
+        <div className="card" onClick={handleRequest}>
+            <h1 >Seeking an alternative AI solution?</h1>
+            <h6>We're eager to learn about your specific AI needs!</h6>
+            {/* <Link to='/requestform' role='button'>Request Form</Link> */}
         </div>
-        <div>
-          <h1 >Looking for a Contribution?</h1>
-          <h6>View all service requests and show your skills if possible </h6>
-          <Link to='/viewrequests' role='button' style={{ color: 'blue', textDecoration: 'none' }}>View Request</Link>
+        <div className="card" onClick={handleViewRequest}>      
+            <h1 >Looking for a Contribution?</h1>
+            <h6>View all service requests and show your skills if possible </h6>
+            {/* <Link to='/viewrequests' role='button' style={{ color: 'blue', textDecoration: 'none' }}>View Request</Link> */}
         </div>
       </div>
     </div>

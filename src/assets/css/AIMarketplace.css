@@ -15,18 +15,36 @@
   text-align : center;
 }
 
-.pagefooter {
+
+.cards {
   display: flex;
   justify-content: center;
 }
 
-.pagefooter > div {
-  border: 1px solid black;
-  padding: 20px;
-  margin: 10px;
+.card {
+  justify-content: space-around;
+  background-color: #f0f0f0; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+}
+.card + .card {
+  margin-left: 20px; /* Adjust the value to increase or decrease the distance */
+}
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+  cursor: pointer;
+}
+.card > div {
+  flex: 1;
 }
 
-.link {
-  color: blue; /* Change the color to blue */
-  text-decoration: none; /* Remove the default underline */
+.card h1 {
+  color: #333; 
+}
+
+.card h6 {
+  color: #666; 
 }
