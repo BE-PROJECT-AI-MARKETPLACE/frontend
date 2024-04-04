@@ -2,12 +2,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import '../assets/css/Card.css';
-import AboutServiceCard from './AboutServiceCard';
-import AboutService from '../pages/AboutService';
 
 const Cards = (props) => {
+    const handleService = () =>
+    {
+        <Link to={`/aboutservice/${props.id}`} role='button' className='link'> View</Link>
+    }
   return (
-    <div className='card-container'>
+    <div className='card-container' onClick={handleService}>
         <div className='image-container'>
             <img src={props.imageurl} alt=''/>
         </div>
@@ -19,10 +21,6 @@ const Cards = (props) => {
                 <p>{props.body}</p>
             </div>  
         </div>     
-        <div className='btn'>
-
-              <Link to={`/aboutservice/${props.id}`} role='button' className='link'> View</Link>
-        </div>   
     </div>   
   )
 }

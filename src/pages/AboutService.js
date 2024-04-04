@@ -7,8 +7,8 @@ const AboutService = (props) => {
   const { id } = useParams();
   
   const [service, setService] = useState({
-    service_name :'',
-    service_overview: '',
+    service_name :'abc',
+    service_overview: 'xyz',
     service_details: '',
   });
   useEffect(() =>{
@@ -46,6 +46,15 @@ const AboutService = (props) => {
       organization={service.service_provider}
       contributors={service.service_details.service_contributors}
       />
+    {/* <AboutServiceCard
+      imageSrc={Backimg}
+      heading1={service.service_name}
+      heading2="Overview"
+      text={service.service_overview}
+      projectURL="url"
+      organization="organiztion"
+      contributors="contributors"
+      /> */}
     </div>
   );
 }

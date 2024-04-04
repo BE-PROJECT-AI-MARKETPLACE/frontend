@@ -30,50 +30,51 @@ const AboutServiceCard = (props) => {
   }
 
   return (
+    <div>
     <div className="cards">
       <div className="card">
-        <div className="card-image-container">
-          <img className="card-image" src={props.imageSrc} alt={props.heading1} />
+        <div className="main-card-image-container">
+          <img className="main-card-image" src={props.imageSrc} alt={props.heading1} />
         </div>
-        <div className="card-text-container">
-          <div className="card-text-content">
-            <h1 className="card-heading1">{props.heading1}</h1>
+        <div className="main-card-text-container">
+          <div className="main-card-text-content">
+            <h1 className="main-card-heading1">{props.heading1}</h1>
           </div>
         </div>
       </div>
       <div className="card">
-        <div className="card-text-container">
-          <div className="card-text-content">
-            <h4 className="card-heading2">{props.heading2}</h4>
-            <p className="card-text">{props.text}</p>
+        <div className="main-card-text-container">
+          <div className="main-card-text-content">
+            <h4 className="main-card-heading2">{props.heading2}</h4>
+            <p className="main-card-text">{props.text}</p>
           </div>
         </div>
       </div>
 
       <div className="card">
-        <div className="card-project-container">
-          <div className="card-project-content">
-            <h4 className="card-project-heading">Project Details</h4>
-            <div className="card-project-field">
-              <p className="card-text">Project URL</p>
-              <p className="card-text">{props.projectURL}</p>
+        <div className="main-card-project-container">
+          <div className="main-card-project-content">
+            <h4 className="main-card-project-heading">Project Details</h4>
+            <div className="main-card-project-field">
+              <p className="main-card-text">Project URL {props.projectURL}</p>
+              {/* <p className="main-card-text">{props.projectURL}</p> */}
             </div>
-            <div className="card-project-field">
-              <p className="card-text"> Organization ID</p>
-              <p className="card-text">{props.organization}</p>
+            <div className="main-card-project-field">
+              <p className="main-card-text"> Organization ID: {props.organization}</p>
+              {/* <p className="main-card-text">{props.organization}</p> */}
             </div>
-            <div className="card-project-field">
-              <p className="card-text">Contributors</p>
-              <p className="card-text">{props.contributors}</p>
+            <div className="main-card-project-field">
+              <p className="main-card-text">Contributors: {props.contributors}</p>
             </div>
           </div>
         </div>
-
       </div>
-      <button onClick={handlePayment}>Pay</button>
+    </div>
+    <div className="cards">
+      <button class="button-17" onClick={handlePayment}>Buy Service</button>
       <Toaster />
     </div>
-
+  </div>
   );
 };
 
