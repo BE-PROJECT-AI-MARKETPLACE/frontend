@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/ProfileCard.css';
-import LinkedIn from '../assets/images/nav-icon1.svg';
-import GitHub from '../assets/images/nav-icon2.svg';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 
@@ -14,23 +14,20 @@ const ProfileCard = (props) => {
             <h1 className="bold-text">
                 {props.name}
             </h1>
-            <div className="normal-text">{props.college}</div>
-            <div className="normal-text">{props.city}</div>
+            <div className="normal-text">{props.college}, {props.city}</div>
             <div className="social-container">
                 <div className="linkedIn">
                     <a href={props.linkedIn}>
-                        <img src={LinkedIn} alt="LinkedIn" className='socialmedia'>
-                        </img>
+                        <i class="fab fa-linkedin"></i>
                     </a>
-                    <h2 className="smaller-text">LinkedIn</h2>
                 </div>
                 <div className="github">
                     <a href={props.github}>
-                        <img src={GitHub} alt="Github" className='socialmedia'></img>
+                        <i class="fab fa-github"></i>
                     </a>
-
-                    <h2 className="smaller-text">Github</h2>
                 </div>
+
+            
             </div>
         </div>
         
