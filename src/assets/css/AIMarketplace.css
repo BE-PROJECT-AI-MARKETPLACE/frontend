@@ -33,10 +33,11 @@
   margin-left: 20px; /* Adjust the value to increase or decrease the distance */
 }
 .card:hover{
-  transform: scale(1.1);
+  transform: scale(1.1  );
   box-shadow: 0px 0px 15px 0px;
   cursor: pointer;
 }
+
 .card > div {
   flex: 1;
 }
