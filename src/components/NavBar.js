@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/NavBar.css';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/images/logo.png';
 
 const NavBar = () => {
 
     const { user, logout } = useAuth();
-
+    console.log(user);
     return (
         <nav className='navbar'>
             <div className='container'>
                     <div className='logo'>
-                        <Link to='/'>Logo</Link>
+                        <Link to='/'><img src={logo} alt='Logo' /></Link>
                     </div>
                 <div className='nav-elements'>
                     <ul>
