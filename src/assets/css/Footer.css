@@ -17,13 +17,13 @@
     padding:0 10px;
   }
   
-  .footer-basic ul a {
+  .footer-basic ul link {
     color:inherit;
     text-decoration:none;
     opacity:0.8;
   }
   
-  .footer-basic ul a:hover {
+  .footer-basic ul link:hover {
     opacity:1;
   }
   

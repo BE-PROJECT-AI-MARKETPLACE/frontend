@@ -7,8 +7,8 @@ const AboutService = (props) => {
   const { id } = useParams();
   
   const [service, setService] = useState({
-    service_name :'abc',
-    service_overview: 'xyz',
+    service_name :'',
+    service_overview: '',
     service_details: '',
   });
   useEffect(() =>{

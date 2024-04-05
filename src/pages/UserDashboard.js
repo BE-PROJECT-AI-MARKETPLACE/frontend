@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import UserCard from '../components/UserCard.js';
 import Backimg from '../assets/images/backimg.png';
 import profile from '../assets/images/profile.png';
-import Card from '../components/ServiceCards.js';
+import Card from '../components/CardDashboard.js';
 import '../assets/css/UserDashboard.css';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext.js';
@@ -55,7 +55,7 @@ const UserDashboard =()=> {
         {servicesBought.length > 0 ? (
           servicesBought.map((item, index) => (
 
-            <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
+            <Card key={index + 1} id={item.service_details.serviceID} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (
@@ -70,7 +70,7 @@ const UserDashboard =()=> {
         {servicesProvided.length > 0 ? (
           servicesProvided.map((item, index) => (
 
-            <Card key={index + 1} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
+            <Card key={index + 1} id={item.service_details.serviceID} title={item.service_name} imageurl={profile} body={item.service_overview} logo={profile} />
 
           ))
         ) : (

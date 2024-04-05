@@ -23,7 +23,7 @@ const NavBar = () => {
                         <>
                             <ul>
                                 <li> <Link to='/userdashboard'>User Profile</Link></li>
-                                <li><a href="#" onClick={logout} className='link signUpButton'>Logout</a></li>
+                                <li><a href="/" onClick={logout} className='link signUpButton'>Logout</a></li>
 
                             </ul>
                         </>

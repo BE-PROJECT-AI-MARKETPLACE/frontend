@@ -25,6 +25,7 @@ import AddServiceForm from './pages/AddServiceForm.js';
 import Requests from './pages/Requests.js';
 import AboutService from './pages/AboutService.js';
 import UserDashboard from './pages/UserDashboard.js';
+import AboutServiceDashboard from './pages/AboutServiceDashboard.js';
 
 function App() {
   //const { user } = useAuth();
@@ -65,6 +66,9 @@ function App() {
                 {/* </Route> */}
                 <Route path='/aboutservice/:id' element={<ProtectedRoute />}>
                   <Route path='/aboutservice/:id' element={<AboutService />} />
+                </Route>
+                <Route path='/aboutservicedashboard/:id' element={<ProtectedRoute />}>
+                  <Route path='/aboutservicedashboard/:id' element={<AboutServiceDashboard />} />
                 </Route>
                 <Route path='/userdashboard' element={<ProtectedRoute />}>
                   <Route path='/userdashboard' element={<UserDashboard />} />

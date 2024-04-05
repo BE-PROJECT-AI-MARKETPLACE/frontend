@@ -221,8 +221,8 @@ const AddServiceForm = () => {
                         />
                     </div>
                     <div className="input">
-                        <input type="file" onChange={handleFileUpload} accept=".pdf" />
-                        <button type="button" className='submit' onClick={handleUpload}>Upload to IPFS</button>
+                        <input type="file" onChange={handleFileUpload} accept=".py" />
+                        <button type="button" className='submit' onClick={handleUpload}>Upload</button>
                         
                     </div>
                 </div>

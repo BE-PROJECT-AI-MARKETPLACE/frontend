@@ -4,15 +4,15 @@ import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import toast,{Toaster} from 'react-hot-toast';
 //props
-const AboutServiceCard = (props) => {
+const ViewServiceCard = (props) => {
 
   const { user } = useAuth();
-  const { heading1,projectURL } = props;
-  const handlePayment = async() => {
+  const { heading1 } = props;
+  const handleViewService = async() => {
     try {
       console.log(props);
       console.log(heading1);
-      const response = await axios.post('http://localhost:4000/pay', { amount: 1, service_name : heading1, payer: user.account });
+      const response = await axios.post('http://localhost:4000/gethash', { service_name : heading1, payer: user.account });
       console.log(response);
       if (response.data.status === 200) {
         console.log(response.data.data);
@@ -22,7 +22,7 @@ const AboutServiceCard = (props) => {
         console.log(openLink);
         window.open(openLink);
       } else {
-        toast.error("Payment Unsuccessful");
+        toast.error("Error Viewing the File");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -58,7 +58,7 @@ const AboutServiceCard = (props) => {
       <tbody>
         <tr>
           <td className="main-card-project-field">Service URL:</td>
-                  <td className="main-card-text">{props.projectURL}</td>
+          <td className="main-card-text">{props.projectURL}</td>
         </tr>
         <tr>
           <td className="main-card-project-field">Organization ID:</td>
@@ -76,11 +76,11 @@ const AboutServiceCard = (props) => {
 
     </div>
     <div className="cards">
-      <button class="button-17" onClick={handlePayment}>Buy Service</button>
+      <button class="button-17" onClick={handleViewService}>View Service</button>
       <Toaster />
     </div>
   </div>
   );
 };
 
-export default AboutServiceCard;
+export default ViewServiceCard;
